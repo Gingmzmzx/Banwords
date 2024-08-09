@@ -23,13 +23,14 @@
 ## API
 ### GET /ping
 检查服务器是否存活  
-Return: `{"status": "ok"}`
+- Return: `{"status": "ok"}`
 
 ### GET /check/:name
 检查文本是否包含违禁词  
-Authorization: 在header中添加`Authorization`字段，值为`Basic base64(user:key)`
-Return: `{"result": true, "text": ["str1", "str2"]}`  
-Return: `{"result": false}`  
+- Authorization: 在header中添加`Authorization`字段，值为`Basic base64(user:key)`
+- Return: `{"result": true, "text": ["str1", "str2"]}`
+- Return: `{"result": false}`
+
 例：
 ```shell
 curl -X GET http://localhost:8080/check/Hello%20World \
@@ -42,3 +43,6 @@ curl -X GET http://localhost:8080/check/Hello%20World \
 - `server.user`: 用户名
 - `server.key`: 密码
 - `data.path`: 违禁词文件路径
+
+## 注
+蒟蒻的第一个Golang程序，代码写得很烂，欢迎各位大佬指正
